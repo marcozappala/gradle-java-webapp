@@ -1,0 +1,26 @@
+plugins {
+    //The war plugin adds the configurations providedCompile and providedRuntime, analogous to compile and runtime in
+    // regular Java applications, to represent dependencies that are needed locally but should not be added to  the
+    // generated gradle-java-webapp.war file. It extends the 'java' core plugin
+    id 'war'
+
+    //The plugin makes it easy to run or test webapps on either Jetty or Tomcat. The gretty plugin adds a large number
+    // of tasks to the application, useful for running or testing in Jetty or Tomcat environments. For example, you
+    // can build and deploy the app to the default (Jetty) container by using the appRun task.
+    id 'org.gretty' version '2.2.0'
+}
+
+group 'org.zap.training'
+version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.7.19'
+}
+
